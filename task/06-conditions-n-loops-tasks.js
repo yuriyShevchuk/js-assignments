@@ -331,7 +331,7 @@ function isBracketsBalanced(str) {
         '(': ')',
         '<': '>'
     };
-    const closing = Object.values(brackets_all);
+    const closing = ['}', ']', ')', '>'];
     let stack = [];
     for (let ch of str) {
         if (brackets_all.hasOwnProperty(ch)){
@@ -457,7 +457,7 @@ function toNaryString(num, n) {
          }
          in_every && common_path.push(to_compare[i]);
      }
-     if (!common_path.slice(-1).includes('.')) common_path.push('');
+     common_path.push('');
      return common_path.join('/');
  }
 
