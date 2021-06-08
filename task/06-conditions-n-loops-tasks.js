@@ -338,7 +338,7 @@ function isBracketsBalanced(str) {
             stack.push(ch);
             continue;
         }
-        if (closing.includes(ch) && ch !== brackets_all[stack.pop()]) return false;
+        if (closing.indexOf(ch) >= 0 && ch !== brackets_all[stack.pop()]) return false;
     }
     return stack.length === 0;
 }
