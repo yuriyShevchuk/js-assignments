@@ -97,7 +97,7 @@ describe('06-conditions-n-loops-tasks', function() {
             { sides: [ 3, 4, 5] , expected:  true },
             { sides: [ 10, 1, 1] , expected:  false },
             { sides: [ 10, 10, 10] , expected:  true },
-        ].forEach(data => { 
+        ].forEach(data => {
             [[0,1,2], [0,2,1], [1,2,0], [1,0,2], [2,0,1], [2,1,0]].forEach(idx => {
                 var actual = tasks.isTriangle(
                     data.sides[idx[0]],
@@ -116,7 +116,7 @@ describe('06-conditions-n-loops-tasks', function() {
 
     it.optional('doRectanglesOverlap should return true if rectangles overlap', () => {
         [
-            { 
+            {
                 rect1:    { top: 0, left: 0, width: 10, height: 10 },
                 rect2:    { top: 5, left: 5, width: 10, height: 10 },
                 expected: true
@@ -145,7 +145,7 @@ describe('06-conditions-n-loops-tasks', function() {
                 rect2:    { top: 25, left:100, width: 10, height: 10 },
                 expected: false
             }
-        ].forEach(data => { 
+        ].forEach(data => {
             assert.equal(
                 tasks.doRectanglesOverlap(data.rect1, data.rect2),
                 data.expected,
@@ -157,23 +157,23 @@ describe('06-conditions-n-loops-tasks', function() {
 
     it.optional('isInsideCircle should return true if point lies inside of the specified circle', () => {
         [
-            { 
+            {
                 circle:   { center: { x: 0, y: 0 }, radius: 10 },
                 point:    { x: 0, y: 0 },
                 expected: true
-            },{ 
+            },{
                 circle:   { center: { x: 5, y: 5 }, radius: 6 },
                 point:    { x: 5, y: 10.99 },
                 expected: true
-            },{ 
+            },{
                 circle:   { center: { x: 0, y: 0 }, radius: 10 },
                 point:    { x: 0, y: 10 },
                 expected: false
-            },{ 
+            },{
                 circle:   { center: { x: 5, y: 5 }, radius: 6 },
                 point:    { x: 0, y: 0 },
                 expected: false
-            },{ 
+            },{
                 circle:   { center: { x: 2, y: 2 }, radius: 1 },
                 point:    { x: 2.8, y: 2.8 },
                 expected: false
@@ -186,7 +186,7 @@ describe('06-conditions-n-loops-tasks', function() {
                 point:    { x: 2, y: 6.1 },
                 expected: false
             }
-        ].forEach(data => { 
+        ].forEach(data => {
             assert.equal(
                 tasks.isInsideCircle(data.circle, data.point),
                 data.expected,
