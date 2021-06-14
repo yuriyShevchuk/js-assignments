@@ -148,10 +148,11 @@ function retry(func, attempts) {
  *
  */
 function logger(func, logFunc) {
-    return function (...args){
+    return function (){
+        const args = Array.from(arguments);
         const str = `${func.name}(${JSON.stringify(args).slice(1, -1)})`;
         logFunc(`${str} starts`);
-        const result = func(...args);
+        const result = func.apply(null, args);
         logFunc(`${str} ends`);
         return result;
     };
